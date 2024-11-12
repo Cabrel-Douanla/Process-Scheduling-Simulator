@@ -16,12 +16,14 @@ Ce projet est un simulateur d'ordonnancement de processus écrit en C++ avec l'A
 
 ## Versions
 
-Le projet est disponible en trois versions pour illustrer progressivement les algorithmes :
+Le projet est disponible en 4 versions pour illustrer progressivement les algorithmes :
 
-1. **`fcfs.cpp` :** Implémente uniquement l'algorithme FCFS.
-2. **`fcfs_sjf.cpp` :** Implémente les algorithmes FCFS et SJF (préemptif et non préemptif).
-3. **`fcfs_sjf_rr.cpp` :** Implémente les algorithmes FCFS, SJF (préemptif et non préemptif) et Round Robin.
+1. **`src/win32/fcfs.cpp` :** Implémente uniquement l'algorithme FCFS.
+2. **`src/win32/fcfs_sjf.cpp` :** Implémente les algorithmes FCFS et SJF (préemptif et non préemptif).
+3. **`src/win32/fcfs_sjf_rr.cpp` :** Implémente les algorithmes FCFS, SJF (préemptif et non préemptif) et Round Robin.
+3. **`src/gtk/fcfs_sjf_rr.cpp` :** Implémente les algorithmes FCFS, SJF (préemptif et non préemptif) et Round Robin avel la librairie GTK+3.
 
+Les executables des programmes sont disponible dans le repertoire `bin` du projet.
 
 ## Compilation et exécution
 
@@ -32,7 +34,7 @@ Le projet est disponible en trois versions pour illustrer progressivement les al
 
 **Compilation :**
 
-Utilisez les commandes suivantes pour compiler les différentes versions :
+Deplacez-vous dans le repertoire `src` et utilisez les commandes suivantes pour compiler les différentes versions :
 
 * **`fcfs.cpp` :**
 ```bash
@@ -46,6 +48,10 @@ g++ fcfs_sjf.cpp -o fcfs_sjf.exe -lgdi32 -lcomctl32
 ```bash
 g++ fcfs_sjf_rr.cpp -o fcfs_sjf_rr.exe -lgdi32 -lcomctl32
 ```
+* **`fcfs_sjf_rr_gtk.cpp` :**
+```bash
+g++ -o fsfc_sjf_rr_gtk fcfs_sjf_rr_gtk.cpp `pkg-config --cflags --libs gtk+-3.0`
+```
 
 
 **Exécution :**
@@ -53,7 +59,7 @@ g++ fcfs_sjf_rr.cpp -o fcfs_sjf_rr.exe -lgdi32 -lcomctl32
 Après compilation, exécutez le fichier `.exe` correspondant :
 
 ```bash
-./fcfs.exe  // ou ./fcfs_sjf.exe ou ./fcfs_sjf_rr.exe
+./fcfs.exe  // ou ./fcfs_sjf.exe ou ./fcfs_sjf_rr.exe ou encore ./fcfs_sjf_rr_gtk.exe
 ```
 
 
